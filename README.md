@@ -1,7 +1,4 @@
-ListMalloc
-==========
 
-Malloc Implementation in Assembly for Nasm
 
 http://git-scm.com/book     ;link to the book on git
 
