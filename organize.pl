@@ -42,9 +42,9 @@ foreach(@pic_files){
 	
 	$dir = $folder_dates[0];
 	mkdir ($dir);
-	$dir = $folder_dates[0] . "/" . $months[$folder_dates[1]];
+	$dir .= "/" . $months[$folder_dates[1]];
 	mkdir ($dir);
-	$dir = $folder_dates[0] . "/" . $months[$folder_dates[1]] . "/" . $day;
+	$dir .= "/" . $day;
 	mkdir ($dir);
 	$dir .= "/" . $tmp;
 
