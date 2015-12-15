@@ -28,9 +28,6 @@ sudo chmod +x NetworkMiner.exe
 sudo chmod -R go+w AssembledFiles/
 sudo chmod -R go+w Captures/
 
-# Update the VM
-sudo apt-get update -y; sudo apt-get dist-upgrade -y
-
 # Discover Scripts
 cd /opt
 git clone https://github.com/leebaird/discover && cd discover && ./setup.sh && cd ..
@@ -54,3 +51,7 @@ sudo pip install pwntools
 sudo apt-get install --fix-missing -y beef-xss
 ## Flawfinder
 sudo apt-get install --fix-missing -y flawfinder
+
+
+# Update the VM
+sudo apt-get update -y; sudo apt-get dist-upgrade -y
