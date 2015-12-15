@@ -18,7 +18,7 @@ sudo chmod -R go+w Captures/
 
 # Discover Scripts
 cd /opt
-git clone https://github.com/leebaird/discover && cd discover && ./setup.sh && cd ..
+git clone https://github.com/leebaird/discover && cd discover && cd ..
 
 # PowerSploit
 cd /opt
