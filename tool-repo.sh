@@ -7,6 +7,9 @@ cd /opt/ && git clone https://github.com/longld/peda && sed -i 's/: (\"off\"/: (
 # VIM Config File
 wget https://raw.githubusercontent.com/tentpegbob/bearded-cyril/master/default-vim-cfg -O ~/.vimrc
 
+# Default Aliases File
+wget https://raw.githubusercontent.com/tentpegbob/bearded-cyril/master/bash_aliases -O ~/.bash_aliases
+
 # Install Network Miner
 sudo apt-get install -y --fix-missing libmono-winforms2.0-cil
 wget sf.net/projects/networkminer/files/latest -O /tmp/nm.zip
