@@ -5,7 +5,7 @@ perl -e 'print "# Source all settings from the peda dir\n" . "source ~/peda/peda
 cd /opt/ && git clone https://github.com/longld/peda && sed -i 's/: (\"off\"/: (\"on\"/g' /opt/peda/lib/config.py
 
 # VIM Config File
-wget https://github.com/tentpegbob/bearded-cyril/blob/master/default-vim-cfg -O ~/.vimrc
+wget https://raw.githubusercontent.com/tentpegbob/bearded-cyril/master/default-vim-cfg -O ~/.vimrc
 
 # Install Network Miner
 sudo apt-get install -y --fix-missing libmono-winforms2.0-cil
