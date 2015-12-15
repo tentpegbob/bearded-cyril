@@ -47,7 +47,10 @@ git clone https://github.com/danielmiessler/SecLists
 cd /usr/share/nmap/scripts
 wget https://raw.github.com/hdm/scan-tools/master/nse/banner-plus.nse
 
-# Install pwntools
+# Extra Installs
+## Install pwntools
 sudo pip install pwntools
-# BeEF
+## BeEF
 sudo apt-get install --fix-missing -y beef-xss
+## Flawfinder
+sudo apt-get install --fix-missing -y flawfinder
