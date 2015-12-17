@@ -10,6 +10,13 @@ wget https://raw.githubusercontent.com/tentpegbob/bearded-cyril/master/default-v
 # Default Aliases File
 wget https://raw.githubusercontent.com/tentpegbob/bearded-cyril/master/bash_aliases -O ~/.bash_aliases
 
+# Install ROPgadget
+sudo pip install capstone --upgrade
+cd /opt
+git clone https://github.com/JonathanSalwan/ROPgadget
+cd ROPgadget
+python setup.py install
+
 # Install Network Miner
 sudo apt-get install -y --fix-missing libmono-winforms2.0-cil
 wget sf.net/projects/networkminer/files/latest -O /tmp/nm.zip
@@ -37,12 +44,11 @@ wget https://raw.github.com/hdm/scan-tools/master/nse/banner-plus.nse
 
 # Extra Installs
 ## Install pwntools
-sudo pip install pwntools
+sudo pip install pwntools --upgrade
 ## BeEF
 sudo apt-get install --fix-missing -y beef-xss
 ## Flawfinder
 sudo apt-get install --fix-missing -y flawfinder
-
 
 # Update the VM
 sudo apt-get update -y; sudo apt-get dist-upgrade -y
