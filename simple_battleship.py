@@ -2,7 +2,7 @@ from random import randint
 
 #Initialize the Board here
 #BOARDSIZE is a static constant that controls the size of the board
-BOARDSIZE = 5
+BOARDSIZE = 15
 board = []
 for x in range(0, BOARDSIZE):
     board.append(["O"] * BOARDSIZE)
@@ -56,7 +56,6 @@ def random_col(board):
 def main():
     ship_row = random_row(board)
     ship_col = random_col(board)
-
     print_begin_art()
     print_board(board)
 
