@@ -27,6 +27,7 @@ chmod -R go+w Captures/
 
 # Discover Scripts
 git clone https://github.com/leebaird/discover /opt
+ln -s /opt/discover/discover.sh /usr/local/bin/discover.sh
 
 # PowerSploit
 cd /opt
@@ -41,6 +42,9 @@ wget https://raw.github.com/hdm/scan-tools/master/nse/banner-plus.nse -O /usr/sh
 # Firmware Mod Kit (FMK)
 wget https://firmware-mod-kit.googlecode.com/files/fmk_099.tar.gz -O /tmp/fmk.tar.gz && tar -xzf /tmp/fmk.tar.gz -C /opt
 apt-get install -y --fix-missing git build-essential zlib1g-dev liblzma-dev python-magic
+ln -s /opt/fmk/extract-firmware.sh /usr/local/bin/fmk_extract-firmware.sh
+ln -s /opt/fmk/unsquashfs_all.sh /usr/local/bin/fmk_unsquashfs_all.sh
+ln -s /opt/fmk/uncramfs_all.sh /usr/local/bin/fmk_uncramfs_all.sh
 
 # Install Foremost Data Carving Tool
 wget http://foremost.sourceforge.net/pkg/foremost-1.5.7.tar.gz -O /tmp/fm.tar.gz && tar -xzf /tmp/fm.tar.gz -C /opt
