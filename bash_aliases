@@ -17,9 +17,11 @@ alias ..='cd ../'                           # Go back 1 directory level
 alias ...='cd ../../'                       # Go back 2 directory levels
 alias .3='cd ../../../'                     # Go back 3 directory levels
 alias .4='cd ../../../../'                  # Go back 4 directory levels
-alias which='type -all'                      # which: Find executables
+alias which='type -all'                     # which: Find executables
 alias show_options='shopt'                  # Show_options: display bash options and settings
-alias fix_stty='stty sane'                  # fix_stty: Restore terminal settings when screwed up
+alias fix_stty='stty sane;'                 # fix_stty: Restore terminal settings when screwed up
 mcd () { mkdir -p "$1" && cd "$1"; }        # mcd: Makes new Dir and jumps inside
 alias lr='ls -R | grep ":$" | sed -e '\''s/:$//'\'' -e '\''s/[^-][^\/]*\//--    +++/g'\'' -e '\''s/^/   /'\'' -e '\''s/-/|/'\'' | less'
 alias NetworkMiner='mono /opt/NetworkMiner_1-6-1/NetworkMiner.exe'
+
+#reload your profile with " source ~/.profile "
