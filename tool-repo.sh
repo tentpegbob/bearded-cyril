@@ -1,4 +1,18 @@
 #!/bin/bash
+# This script will install some typical tools that are useful when playing in CTFs / hacking competitions.
+# It is very geared towards making sure the user can RE or focus on pwnable tasks, but also includes a little
+# bit of everything.
+#
+## [UNRELEASED]
+### ADDED/removed/changed/fixed
+# - TODO - change this to a pythong script so that it interacts with the output from apt-get and other stuff. Should also print errors in any case ...
+#
+## 1.0.0 - 2016-JAN-18
+### ADDED/removed/changed/fixed
+# - Created public release and version for team to use for VM setup.
+# - Ensured that the script was as streamlined as possible and required as little interaction as possible.
+# - Adds symbolic links for some programs so that the user doesn't have to use /opt/...
+#
 
 if [[ $EUID -ne 0 ]]; then
    echo "This script must be run as root" 1>&2
