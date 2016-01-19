@@ -68,3 +68,6 @@ sudo apt-get install --fix-missing -y lib32z1 lib32z1-dev libc6 libc6-dbg libc6-
 
 # Update the VM
 sudo apt-get update -y; sudo apt-get dist-upgrade -y
+
+# Cleanup
+rm /opt/fmk_099.tar.gz /opt/foremost-1.5.7.tar.gz
