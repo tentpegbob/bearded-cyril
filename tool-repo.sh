@@ -11,67 +11,61 @@ wget https://raw.githubusercontent.com/tentpegbob/bearded-cyril/master/default-v
 wget https://raw.githubusercontent.com/tentpegbob/bearded-cyril/master/bash_aliases -O ~/.bash_aliases
 
 # Install ROPgadget
-sudo pip install capstone --upgrade
-cd /opt
-git clone https://github.com/JonathanSalwan/ROPgadget
+pip install capstone --upgrade
+git clone https://github.com/JonathanSalwan/ROPgadget /opt
 cd ROPgadget
 python setup.py install
 
 # Install Network Miner
-sudo apt-get install -y --fix-missing libmono-winforms2.0-cil
+apt-get install -y --fix-missing libmono-winforms2.0-cil
 wget sf.net/projects/networkminer/files/latest -O /tmp/nm.zip
-sudo unzip /tmp/nm.zip -d /opt/
+unzip /tmp/nm.zip -d /opt/
 cd /opt/NetworkMiner*
-sudo chmod +x NetworkMiner.exe
-sudo chmod -R go+w AssembledFiles/
-sudo chmod -R go+w Captures/
+chmod +x NetworkMiner.exe
+chmod -R go+w AssembledFiles/
+chmod -R go+w Captures/
 
 # Discover Scripts
-cd /opt
-git clone https://github.com/leebaird/discover && cd discover && cd ..
+git clone https://github.com/leebaird/discover /opt
 
 # PowerSploit
 cd /opt
 git clone https://github.com/mattifestation/PowerSploit && cd PowerSploit && wget https://raw.github.com/obscuresec/random/master/StartListener.py && wget https://raw.github.com/darkoperator/powershell_scripts/master/ps_encoder.py
 
 # Burp Fuzz Parameters
-cd /opt
-git clone https://github.com/danielmiessler/SecLists
+git clone https://github.com/danielmiessler/SecLists /opt
 
 # Enhanced NMAP Scripts
-cd /usr/share/nmap/scripts
-wget https://raw.github.com/hdm/scan-tools/master/nse/banner-plus.nse
+wget https://raw.github.com/hdm/scan-tools/master/nse/banner-plus.nse -O /usr/share/nmap/scripts
 
 # Firmware Mod Kit (FMK)
-cd /opt
-wget https://firmware-mod-kit.googlecode.com/files/fmk_099.tar.gz
-tar -xzf fmk_099.tar.gz
-sudo apt-get install -y --fix-missing git build-essential zlib1g-dev liblzma-dev python-magic
+wget https://firmware-mod-kit.googlecode.com/files/fmk_099.tar.gz -O /tmp/fmk.tar.gz && tar -xzf /tmp/fmk.tar.gz -C /opt
+apt-get install -y --fix-missing git build-essential zlib1g-dev liblzma-dev python-magic
 
 # Install Foremost Data Carving Tool
-cd /opt
-wget http://foremost.sourceforge.net/pkg/foremost-1.5.7.tar.gz
-tar -xzf foremost-1.5.7.tar.gz
+wget http://foremost.sourceforge.net/pkg/foremost-1.5.7.tar.gz -O /tmp/fm.tar.gz && tar -xzf /tmp/fm.tar.gz -C /opt
 
 # Extra Installs
 ## Install pwntools
-sudo pip install pwntools --upgrade
+pip install pwntools --upgrade
 ## BeEF
-sudo apt-get install --fix-missing -y beef-xss
+apt-get install --fix-missing -y beef-xss
 ## Flawfinder
-sudo apt-get install --fix-missing -y flawfinder
+apt-get install --fix-missing -y flawfinder
 ## Install 32-bit Support
-sudo apt-get install --fix-missing -y lib32z1 lib32z1-dev libc6 libc6-dbg libc6-dev libc6-dev-i386 libc6-i386
+apt-get install --fix-missing -y lib32z1 lib32z1-dev libc6 libc6-dbg libc6-dev libc6-dev-i386 libc6-i386
 ## Install ARM support
 # Not Tested Yet
-# sudo apt-get install --fix-missing -y libc6-armel-cross libc6-armel-armhf-cross libc6-arm64-cross
+# apt-get install --fix-missing -y libc6-armel-cross libc6-armel-armhf-cross libc6-arm64-cross
 ## strace
 apt-get install -y --fix-missing strace
 ## valgrind
 apt-get install -y --fix-missing valgrind
 
-# Update the VM
-sudo apt-get update -y; sudo apt-get dist-upgrade -y
+## If you need to fix pip use this:
+# apt-get remove python-pip
+# easy_install pip
+# apt-get install -y python-pip
 
-# Cleanup
-rm /opt/fmk_099.tar.gz /opt/foremost-1.5.7.tar.gz
+# Update the VM
+apt-get update -y; apt-get dist-upgrade -y; apt-get autoremove -y
