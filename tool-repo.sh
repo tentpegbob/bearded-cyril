@@ -46,7 +46,7 @@ wget https://raw.github.com/hdm/scan-tools/master/nse/banner-plus.nse
 cd /opt
 wget https://firmware-mod-kit.googlecode.com/files/fmk_099.tar.gz
 tar -xzf fmk_099.tar.gz
-sudo apt-get install git build-essential zlib1g-dev liblzma-dev python-magic
+sudo apt-get install -y --fix-missing git build-essential zlib1g-dev liblzma-dev python-magic
 
 # Install Foremost Data Carving Tool
 cd /opt
