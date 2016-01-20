@@ -6,7 +6,7 @@
 ## [UNRELEASED]
 ### ADDED/removed/changed/fixed
 # - TODO - change this to a pythong script so that it interacts with the output from apt-get and other stuff. Should also print errors in any case ...
-#
+# - Added Atom text editor and some pre-installed languages / APMs
 ## 1.0.0 - 2016-JAN-18
 ### ADDED/removed/changed/fixed
 # - Created public release and version for team to use for VM setup.
@@ -47,6 +47,11 @@ chmod -R go+w Captures/
 # Discover Scripts
 git clone https://github.com/leebaird/discover /opt
 ln -s /opt/discover/discover.sh /usr/local/bin/discover.sh
+
+# Install Atom.io text editor @ http://atom.io
+# Comes pre-loaded with syntax marking for lots of different  languages and includes markdown previewing
+wget https://github.com/atom/atom/releases/download/v1.4.0/atom-amd64.deb -O /tmp/atom.deb && dpkg --install /tmp/atom.deb
+apm install minimap vim-mode
 
 # PowerSploit
 cd /opt
