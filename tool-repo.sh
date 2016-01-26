@@ -89,6 +89,8 @@ apt-get install --fix-missing -y lib32z1 lib32z1-dev libc6 libc6-dbg libc6-dev l
 apt-get install -y --fix-missing strace
 ## valgrind
 apt-get install -y --fix-missing valgrind
+## Do The Right Extration tool
+apt-get install -y dtrx
 
 ## If you need to fix pip use this:
 # apt-get remove python-pip
