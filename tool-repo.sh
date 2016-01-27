@@ -9,6 +9,7 @@
 # - Added Atom text editor and some pre-installed languages / APMs
 # - Fixed peda sed instruction so that it only turns on debuging and leaves verbosity off
 # - Added DTRX extractor for easy archive extraction
+#
 ## 1.0.0 - 2016-JAN-18
 ### ADDED/removed/changed/fixed
 # - Created public release and version for team to use for VM setup.
