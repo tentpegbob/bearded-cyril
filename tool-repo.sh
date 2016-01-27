@@ -4,9 +4,11 @@
 # bit of everything.
 #
 ## [UNRELEASED]
-### ADDED/removed/changed/fixed
-# - TODO - change this to a pythong script so that it interacts with the output from apt-get and other stuff. Should also print errors in any case ...
+### ADDED/removed/changed/FIXED
+# - TODO - change this to a python script so that it interacts with the output from apt-get and other stuff. Should also print errors in any case ...
 # - Added Atom text editor and some pre-installed languages / APMs
+# - Fixed peda sed instruction so that it only turns on debuging and leaves verbosity off
+# - Added DTRX extractor for easy archive extraction
 ## 1.0.0 - 2016-JAN-18
 ### ADDED/removed/changed/fixed
 # - Created public release and version for team to use for VM setup.
@@ -21,7 +23,7 @@ fi
 
 # Install GDB-Peda
 perl -e 'print "# Source all settings from the peda dir\n" . "source ~/peda/peda.py\n\n" . "# These are other settings I have found useful\n\n" . "# Intel syntax is more readable\n" . "set disassembly-flavor intel\n\n" . "# When inspecting large portions of code the scrollbar works better than \"less\"\n" . "set pagination off\n\n" . "# Keep a history of all the commands typed. Search is possible using ctrl-r\n" . "set history save on\n" . "set history filename ~/.gdb_history\n" . "set history size 32768\n" . "set history expansion on"' > ~/.gdbinit
-cd /opt/ && git clone https://github.com/longld/peda && sed -i 's/: (\"off\"/: (\"on\"/g' /opt/peda/lib/config.py && sed -i 's/~\/peda\/peda.py/\/opt\/peda\/peda.py/g' ~/.gdbinit
+cd /opt/ && git clone https://github.com/longld/peda &&  sed -i 's/\"debug\"     : (\"off\"/\"debug\"     : (\"on\"/g' /opt/peda/lib/config.py && sed -i 's/~\/peda\/peda.py/\/opt\/peda\/peda.py/g' ~/.gdbinit
 
 # Setup Custom VIM Config
 wget https://raw.githubusercontent.com/tentpegbob/bearded-cyril/master/default-vim-cfg -O ~/.vimrc
