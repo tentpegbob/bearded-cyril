@@ -79,21 +79,17 @@ wget http://foremost.sourceforge.net/pkg/foremost-1.5.7.tar.gz -O /tmp/fm.tar.gz
 # Extra Installs
 ## Install pwntools
 pip install pwntools --upgrade
-## BeEF
-apt-get install --fix-missing -y beef-xss
-## Flawfinder
-apt-get install --fix-missing -y flawfinder
+## BeEF, flawfinder, exiftool
+apt-get install --fix-missing -y beef-xss flawfinder exiftool
 ## Install 32-bit Support
 apt-get install --fix-missing -y lib32z1 lib32z1-dev libc6 libc6-dbg libc6-dev libc6-dev-i386 libc6-i386
 ## Install ARM support
 # Not Tested Yet
 # apt-get install --fix-missing -y libc6-armel-cross libc6-armel-armhf-cross libc6-arm64-cross
-## strace
-apt-get install -y --fix-missing strace
-## valgrind
-apt-get install -y --fix-missing valgrind
+## strace & valgrind
+apt-get install -y --fix-missing strace valgrind
 ## Do The Right Extration tool
-apt-get install -y dtrx
+apt-get install -y --fix-missing dtrx
 
 ## If you need to fix pip use this:
 # apt-get remove python-pip
