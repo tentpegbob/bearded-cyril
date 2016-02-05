@@ -6,6 +6,9 @@
 ## [UNRELEASED]
 ### ADDED/removed/changed/FIXED
 # - TODO - change this to a python script so that it interacts with the output from apt-get and other stuff. Should also print errors in any case ...
+#
+## 1.0.4 - 2016-FEB-04
+### ADDED/removed/changed/FIXED
 # - Added Atom text editor and some pre-installed languages / APMs
 # - Added vivisect, a static analysis engine for rebuilding stripped binaries
 # - Fixed peda sed instruction so that it only turns on debuging and leaves verbosity off
