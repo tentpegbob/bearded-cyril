@@ -8,6 +8,7 @@
 # - TODO - change this to a python script so that it interacts with the output from apt-get and other stuff. Should also print errors in any case ...
 # - Added Atom text editor and some pre-installed languages / APMs
 # - Fixed peda sed instruction so that it only turns on debuging and leaves verbosity off
+# - Fixed directories for git clone to work properly
 # - Added DTRX extractor for easy archive extraction
 #
 ## 1.0.0 - 2016-JAN-18
@@ -34,7 +35,7 @@ wget https://raw.githubusercontent.com/tentpegbob/bearded-cyril/master/bash_alia
 
 # Install ROPgadget
 pip install capstone --upgrade
-git clone https://github.com/JonathanSalwan/ROPgadget /opt
+git clone https://github.com/JonathanSalwan/ROPgadget /opt/ROPgadget
 cd ROPgadget
 python setup.py install
 
@@ -48,7 +49,7 @@ chmod -R go+w AssembledFiles/
 chmod -R go+w Captures/
 
 # Discover Scripts
-git clone https://github.com/leebaird/discover /opt
+git clone https://github.com/leebaird/discover /opt/discover
 ln -s /opt/discover/discover.sh /usr/local/bin/discover.sh
 
 # Install Atom.io text editor @ http://atom.io
@@ -61,7 +62,7 @@ cd /opt
 git clone https://github.com/mattifestation/PowerSploit && cd PowerSploit && wget https://raw.github.com/obscuresec/random/master/StartListener.py && wget https://raw.github.com/darkoperator/powershell_scripts/master/ps_encoder.py
 
 # Burp Fuzz Parameters
-git clone https://github.com/danielmiessler/SecLists /opt
+git clone https://github.com/danielmiessler/SecLists /opt/SecLists
 
 # Enhanced NMAP Scripts
 wget https://raw.github.com/hdm/scan-tools/master/nse/banner-plus.nse -O /usr/share/nmap/scripts
