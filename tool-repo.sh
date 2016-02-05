@@ -7,6 +7,7 @@
 ### ADDED/removed/changed/FIXED
 # - TODO - change this to a python script so that it interacts with the output from apt-get and other stuff. Should also print errors in any case ...
 # - Added Atom text editor and some pre-installed languages / APMs
+# - Added vivisect, a static analysis engine for rebuilding stripped binaries
 # - Fixed peda sed instruction so that it only turns on debuging and leaves verbosity off
 # - Fixed directories for git clone to work properly
 # - Added DTRX extractor for easy archive extraction
@@ -51,6 +52,11 @@ chmod -R go+w Captures/
 # Discover Scripts
 git clone https://github.com/leebaird/discover /opt/discover
 ln -s /opt/discover/discover.sh /usr/local/bin/discover.sh
+
+# Vivisect, VDB, and Vtrace
+git clone https://github.com/vivisect/vivisect /opt/vivisect
+ln -s /opt/vivisect/vdbbin /usr/local/bin/vdbbin
+ln -s /opt/vivisect/vivbin /usr/local/bin/vivbin
 
 # Install Atom.io text editor @ http://atom.io
 # Comes pre-loaded with syntax marking for lots of different  languages and includes markdown previewing
