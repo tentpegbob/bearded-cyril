@@ -27,6 +27,10 @@ if [[ $EUID -ne 0 ]]; then
    exit 1
 fi
 
+# Update the VM
+pip install --upgrade pip
+apt-get update -y; apt-get dist-upgrade -y; apt-get autoremove -y
+
 # Install GDB-Peda
 perl -e 'print "# Source all settings from the peda dir\n" . "source ~/peda/peda.py\n\n" . "# These are other settings I have found useful\n\n" . "# Intel syntax is more readable\n" . "set disassembly-flavor intel\n\n" . "# When inspecting large portions of code the scrollbar works better than \"less\"\n" . "set pagination off\n\n" . "# Keep a history of all the commands typed. Search is possible using ctrl-r\n" . "set history save on\n" . "set history filename ~/.gdb_history\n" . "set history size 32768\n" . "set history expansion on"' > ~/.gdbinit
 cd /opt/ && git clone https://github.com/longld/peda &&  sed -i 's/\"debug\"     : (\"off\"/\"debug\"     : (\"on\"/g' /opt/peda/lib/config.py && sed -i 's/~\/peda\/peda.py/\/opt\/peda\/peda.py/g' ~/.gdbinit
@@ -88,6 +92,7 @@ wget http://foremost.sourceforge.net/pkg/foremost-1.5.7.tar.gz -O /tmp/fm.tar.gz
 
 # Xortool
 git clone https://github.com/hellman/xortool /opt/xortool && cd /opt/xortool
+pip install docopt
 python setup.py build && python setup.py install
 
 # Extra Installs
@@ -109,6 +114,3 @@ apt-get install -y --fix-missing dtrx
 # apt-get remove python-pip
 # easy_install pip
 # apt-get install -y python-pip
-
-# Update the VM
-apt-get update -y; apt-get dist-upgrade -y; apt-get autoremove -y
