@@ -6,7 +6,8 @@
 ## [UNRELEASED]
 ### ADDED/removed/changed/fixed
 # - TODO - change this to a python script so that it interacts with the output from apt-get and other stuff. Should also print errors in any case ...
-# - Added Xortool - common xor cracking tool for CTFs
+# - Added more CTF tools Xortool, Checksec
+#
 ## 1.0.4 - 2016-FEB-04
 ### ADDED/removed/changed/FIXED
 # - Added Atom text editor and some pre-installed languages / APMs
@@ -94,6 +95,10 @@ wget http://foremost.sourceforge.net/pkg/foremost-1.5.7.tar.gz -O /tmp/fm.tar.gz
 git clone https://github.com/hellman/xortool /opt/xortool && cd /opt/xortool
 pip install docopt
 python setup.py build && python setup.py install
+
+# checksec outside of gdb peda
+git clone https://github.com/slimm609/checksec.sh /opt/checksec
+ln -s /opt/checksec/./checksec  /usr/local/bin/checksec
 
 # Extra Installs
 ## Install pwntools
