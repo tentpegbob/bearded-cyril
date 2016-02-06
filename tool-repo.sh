@@ -4,9 +4,9 @@
 # bit of everything.
 #
 ## [UNRELEASED]
-### ADDED/removed/changed/FIXED
+### ADDED/removed/changed/fixed
 # - TODO - change this to a python script so that it interacts with the output from apt-get and other stuff. Should also print errors in any case ...
-#
+# - Added Xortool - common xor cracking tool for CTFs
 ## 1.0.4 - 2016-FEB-04
 ### ADDED/removed/changed/FIXED
 # - Added Atom text editor and some pre-installed languages / APMs
@@ -85,6 +85,10 @@ ln -s /opt/fmk/uncramfs_all.sh /usr/local/bin/fmk_uncramfs_all.sh
 
 # Install Foremost Data Carving Tool
 wget http://foremost.sourceforge.net/pkg/foremost-1.5.7.tar.gz -O /tmp/fm.tar.gz && tar -xzf /tmp/fm.tar.gz -C /opt
+
+# Xortool
+git clone https://github.com/hellman/xortool /opt/xortool && cd /opt/xortool
+python setup.py build && python setup.py install
 
 # Extra Installs
 ## Install pwntools
