@@ -42,6 +42,7 @@ apt-get install -y build-essential git cmake libqt4-dev libphonon-dev python2.7-
 git clone https://github.com/PySide/pyside-setup.git /opt/pyside-setup
 cd /opt/pyside-setup
 python2.7 setup.py bdist_wheel --qmake=/usr/bin/qmake-qt4 --version=1.2.4
+pip install pyside
 git clone https://github.com/Vector35/binaryninja-python /opt/binaryninja-python
 ln -s /opt/binaryninja-python/binja.py /usr/bin/binja
 
