@@ -6,7 +6,7 @@
 ## [UNRELEASED]
 ### ADDED/removed/changed/fixed
 # - TODO - change this to a python script so that it interacts with the output from apt-get and other stuff. Should also print errors in any case ...
-# - Added more CTF tools Xortool, Checksec
+# - Added more CTF tools Xortool, Checksec, Binjitsu, Docker
 #
 ## 1.0.4 - 2016-FEB-04
 ### ADDED/removed/changed/FIXED
@@ -33,8 +33,22 @@ pip install --upgrade pip
 apt-get update -y; apt-get dist-upgrade -y; apt-get autoremove -y
 
 # Install GDB-Peda
-perl -e 'print "# Source all settings from the peda dir\n" . "source ~/peda/peda.py\n\n" . "# These are other settings I have found useful\n\n" . "# Intel syntax is more readable\n" . "set disassembly-flavor intel\n\n" . "# When inspecting large portions of code the scrollbar works better than \"less\"\n" . "set pagination off\n\n" . "# Keep a history of all the commands typed. Search is possible using ctrl-r\n" . "set history save on\n" . "set history filename ~/.gdb_history\n" . "set history size 32768\n" . "set history expansion on"' > ~/.gdbinit
+perl -e 'print "# Source all settings from the peda dir\n" . "source /opt/peda/peda.py\n\n" . "# These are other settings I have found useful\n\n" . "# Intel syntax is more readable\n" . "set disassembly-flavor intel\n\n" . "# When inspecting large portions of code the scrollbar works better than \"less\"\n" . "set pagination off\n\n" . "# Keep a history of all the commands typed. Search is possible using ctrl-r\n" . "set history save on\n" . "set history filename ~/.gdb_history\n" . "set history size 32768\n" . "set history expansion on"' > ~/.gdbinit
 cd /opt/ && git clone https://github.com/longld/peda &&  sed -i 's/\"debug\"     : (\"off\"/\"debug\"     : (\"on\"/g' /opt/peda/lib/config.py && sed -i 's/~\/peda\/peda.py/\/opt\/peda\/peda.py/g' ~/.gdbinit
+
+# Install Binjitsu - Vulnerability Research Engine
+pip install --upgrade pycrypto wheel
+apt-get install -y build-essential git cmake libqt4-dev libphonon-dev python2.7-dev libxml2-dev libxslt1-dev qtmobility-dev libqtwebkit-dev
+git clone https://github.com/PySide/pyside-setup.git /opt/pyside-setup
+cd /opt/pyside-setup
+python2.7 setup.py bdist_wheel --qmake=/usr/bin/qmake-qt4 --version=1.2.4
+git clone https://github.com/Vector35/binaryninja-python /opt/binaryninja-python
+ln -s /opt/binaryninja-python/binja.py /usr/bin/binja
+
+# Install Docker
+apt-get install curl
+curl -fsSL https://get.docker.com/ | sh
+# docker run hello-world #to see if your install was successful
 
 # Setup Custom VIM Config
 wget https://raw.githubusercontent.com/tentpegbob/bearded-cyril/master/default-vim-cfg -O ~/.vimrc
