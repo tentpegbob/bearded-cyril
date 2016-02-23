@@ -6,7 +6,7 @@
 ## [UNRELEASED]
 ### ADDED/removed/changed/fixed
 # - TODO - change this to a python script so that it interacts with the output from apt-get and other stuff. Should also print errors in any case ...
-# - Added more CTF tools Xortool, Checksec, Binjitsu, Docker
+# - Added a pythong virtualenv kit and several more CTF tools (Xortool, Checksec, Binjitsu, Docker, etc ...)
 #
 ## 1.0.4 - 2016-FEB-04
 ### ADDED/removed/changed/FIXED
@@ -121,12 +121,12 @@ pip install pwntools --upgrade
 ## BeEF, flawfinder, exiftool
 apt-get install --fix-missing -y beef-xss flawfinder exiftool
 ## Install 32-bit Support
-apt-get install --fix-missing -y lib32z1 lib32z1-dev libc6 libc6-dbg libc6-dev libc6-dev-i386 libc6-i386
+apt-get install --fix-missing -y lib32z1 lib32z1-dev libc6 libc6-dbg libc6-dev libc6-dev-i386 libc6-i386 python-virtualenv
 ## Install ARM support
 # Not Tested Yet
 # apt-get install --fix-missing -y libc6-armel-cross libc6-armel-armhf-cross libc6-arm64-cross
-## strace & valgrind
-apt-get install -y --fix-missing strace valgrind
+## ltrace, strace, & valgrind
+apt-get install -y --fix-missing strace valgrind ltrace
 ## Do The Right Extration tool
 apt-get install -y --fix-missing dtrx
 
