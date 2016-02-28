@@ -6,6 +6,7 @@
 
 import sys, argparse
 
+#pip install colorama
 from colorama import *
     # Colorama constants are:
     #     Colors are Black, Red, Green, Yellow, Blue, Magenta, Cyan, White, and Reset
@@ -13,6 +14,7 @@ from colorama import *
     #     Can Style with Dim, Normal, Bright, Reset_All
     # Example: Fore.RED + Style.BRIGHT + "Hello World"
 
+# func foo(int array[])
 def sort_descending(array):
     for x in range(len(array)):
         for y in range(len(array)-1):
@@ -57,24 +59,7 @@ def handle_output(sorted_list):
         print Fore.RED + Style.BRIGHT + "[ERROR]" + Fore.CYAN + " Unable to write to file" + Style.RESET_ALL
         exit()
 
-def handle_input(order, input):
-    if args.i and not args.l:
-        try:
-            sorted_list = sort_me(args.order, args.i.read().split())
-        except:
-            print Fore.RED + Style.BRIGHT + "[ERROR]" + Fore.CYAN + " Input does not contain all integers" + Style.RESET_ALL
-            exit()
-        handle_output(sorted_list)
-
-    if args.l:
-        try:
-            sorted_list = sort_me(args.order, args.l)
-        except:
-            print Fore.RED + Style.BRIGHT + "[ERROR]" + Fore.CYAN + " Input does not contain all integers" + Style.RESET_ALL
-            exit()
-        handle_output(sorted_list)
-
-
+# This starts the program
 parser = argparse.ArgumentParser(description="Sorts some integers in a specified order. Input can come from a file, STDIN, or a list provided as arguments to this script. By default the sorted list will be printed to STDOUT, but you also have the option of writing to a choosen file.", usage="%(prog)s {a,d} [options]", epilog="and thats how you sort your head from your tail.")
 
 parser.add_argument("order", choices=["a", "d"], type=str, nargs="?", default="a", help="Choose the order you want to sort ascending or descending. Default is ascending order.")
