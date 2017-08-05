@@ -12,11 +12,11 @@ print "Found {} files".format(len(download_list))
 
 path = expanduser("~") + "/Documents/" + web_address.split(".")[1] + "/"
 if not exists(path):
-    try:
-        makedirs(path)
-    except OSError as exception:
-        if exception.errno != errno.EEXIST:
-            raise
+	try:
+		makedirs(path)
+	except OSError as exception:
+		if exception.errno != errno.EEXIST:
+			raise
 
 for x in range(len(download_list)):
 	print "Downloading file #{} from {}".format(x, download_list[x].split("/")[-1])
