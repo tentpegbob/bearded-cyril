@@ -22,6 +22,7 @@ static const int SD_ChipSelect = 4;
 
 // The GPS connection is attached with a software serial port
 SoftwareSerial Gps_serial(GPS_RXPin, GPS_TXPin);
+File dataFile;
 
 void setup()
 { 
@@ -43,6 +44,16 @@ void setup()
     return;
   }
   Serial.println("card initialized.");
+
+  dataFile = SD.open("gps.txt", FILE_WRITE);
+  // if the file is available, write to it:
+  if (dataFile) {
+    Serial.println("opened gps.txt");
+  }
+  // if the file isn't open, pop up an error:
+  else {
+    Serial.println("error opening gps.txt");
+  }
 }
 
 /*
@@ -50,7 +61,7 @@ void setup()
  * At 4800 b/s you can only send 480 characters in one second. An NMEA sentence can be as long as 
  * 82 characters you can be limited to less than 6 different sentences
  */
-String strBuffer;
+static String strBuffer;
 static const char MAGIC_WORD [] = "$GP";
 
 void loop()
@@ -80,26 +91,14 @@ void loop()
        * and signal-to-noise ratio (SNR). If you want that information just comment out
        * the if statement below after this block comment.
        */
-     // if (!strBuffer.startsWith("$GPGSV"))
-        Serial.write(strBuffer.c_str());
-      
-      File dataFile = SD.open("gps.txt", FILE_WRITE);
-      // if the file is available, write to it:
-      if (dataFile) {
-        /* 
-         * here you could do something optional like only write essential fix data
-         * by add an if statement for something like if (strBuffer.startsWith("$GPGGA")) 
-         * a table of gps sentence keywords are available @ http://www.gpsinformation.org/dale/nmea.htm#GSA
-         */
-        dataFile.write(strBuffer.c_str());
-        dataFile.close();
-        strBuffer.remove(0);
-      }
-      // if the file isn't open, pop up an error:
-      else {
-        Serial.println("error opening gps.txt");
-      }
-      
+      Serial.write(strBuffer.c_str());
+       /* 
+       * here you could do something optional like only write essential fix data
+       * by add an if statement for something like if (strBuffer.startsWith("$GPGGA")) 
+       * a table of gps sentence keywords are available @ http://www.gpsinformation.org/dale/nmea.htm#GSA
+       */
+      dataFile.write(strBuffer.c_str());
+      strBuffer.remove(0);
       strBuffer.concat(MAGIC_WORD);
     }
   }
