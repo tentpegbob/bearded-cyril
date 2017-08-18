@@ -1,4 +1,5 @@
 /*
+   Arduino IDE Sketch File
    Log GPS NMEA data to an SD card every second
 
    This code was adapted from the http://www.instructables.com/id/HackerBoxes-0021-Hacker-Tracker/
