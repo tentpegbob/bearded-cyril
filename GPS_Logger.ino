@@ -98,8 +98,7 @@ void loop()
        * a table of gps sentence keywords are available @ http://www.gpsinformation.org/dale/nmea.htm#GSA
        */
       dataFile.write(strBuffer.c_str());
-      strBuffer.remove(0);
-      strBuffer.concat(MAGIC_WORD);
+      strBuffer = MAGIC_WORD;
     }
   }
 }
