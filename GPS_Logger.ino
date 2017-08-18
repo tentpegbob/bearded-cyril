@@ -61,14 +61,15 @@ void loop()
 
   /*
    * read up to 100 characters or we've begun reading anther line by observing another 
-   * magic header value $GP, since every sentence begins with $GP. Five (6) is chosen
+   * magic header value $GP, since every sentence begins with $GP. Eight (8) is chosen
    * as the magic string buffer length because each sentence can begin with a "$"
-   * followed by 5 UPPERCASE letters describing the name of the sentence.
+   * followed by 5 UPPERCASE letters describing the name of the sentence. This leaves
+   * a little bit of padding so we don't accidently cutoff a sentence.
    */
-    if (strBuffer.endsWith(MAGIC_WORD) && (strBuffer.length() > 6))
+    if (strBuffer.endsWith(MAGIC_WORD) && (strBuffer.length() > 8))
     {
       // Remove the magic header, add a null terminator - if needed
-      strBuffer.remove(strBuffer.lastIndexOf(MAGIC_WORD)-1);
+      strBuffer.remove(strBuffer.lastIndexOf(MAGIC_WORD));
       if(!strBuffer.endsWith("\n"))
         strBuffer.concat("\n");
 
@@ -79,7 +80,7 @@ void loop()
        * and signal-to-noise ratio (SNR). If you want that information just comment out
        * the if statement below after this block comment.
        */
-      if (!strBuffer.startsWith("$GPGSV"))
+     // if (!strBuffer.startsWith("$GPGSV"))
         Serial.write(strBuffer.c_str());
       
       File dataFile = SD.open("gps.txt", FILE_WRITE);
