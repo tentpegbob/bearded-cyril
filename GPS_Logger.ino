@@ -88,7 +88,7 @@ void loop()
         /* 
          * here you could do something optional like only write essential fix data
          * by add an if statement for something like if (strBuffer.startsWith("$GPGGA")) 
-         * a table of gps stence keywords are available @ http://www.gpsinformation.org/dale/nmea.htm#GSA
+         * a table of gps sentence keywords are available @ http://www.gpsinformation.org/dale/nmea.htm#GSA
          */
         dataFile.write(strBuffer.c_str());
         dataFile.close();
