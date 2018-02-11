@@ -7,6 +7,7 @@
 ### ADDED/removed/changed/fixed
 # - TODO - change this to a python script so that it interacts with the output from apt-get and other stuff. Should also print errors in any case ...
 # - Added a pythong virtualenv kit and several more CTF tools (Xortool, Checksec, Binjitsu, Docker, etc ...)
+# - Added libc library seacher -> for determining libc on targets
 #
 ## 1.0.4 - 2016-FEB-04
 ### ADDED/removed/changed/FIXED
@@ -92,6 +93,9 @@ git clone https://github.com/mattifestation/PowerSploit && cd PowerSploit && wge
 
 # Burp Fuzz Parameters
 git clone https://github.com/danielmiessler/SecLists /opt/SecLists
+
+# libc seacher
+git clone https://github.com/niklasb/libc-database /opt/libc-database
 
 # Enhanced NMAP Scripts
 wget https://raw.github.com/hdm/scan-tools/master/nse/banner-plus.nse -O /usr/share/nmap/scripts
