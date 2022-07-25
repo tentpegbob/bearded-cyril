@@ -24,4 +24,8 @@ mcd () { mkdir -p "$1" && cd "$1"; }        # mcd: Makes new Dir and jumps insid
 alias lr='ls -R | grep ":$" | sed -e '\''s/:$//'\'' -e '\''s/[^-][^\/]*\//--    +++/g'\'' -e '\''s/^/   /'\'' -e '\''s/-/|/'\'' | less'
 alias NetworkMiner='mono /opt/NetworkMiner_1-6-1/NetworkMiner.exe'
 
+function cd {
+    builtin cd "$@" && ls -F
+}
+
 #reload your profile with " source ~/.profile "
